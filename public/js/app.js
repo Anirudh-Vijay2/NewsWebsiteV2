@@ -8,8 +8,7 @@ document.querySelector('.navbar').style.display = 'none';
 
 (async () => {
   try {
-    // Fetch top headlines for India
-    const responseIndia = await fetch('https://newsapi.org/v2/top-headlines?country=in&apiKey=8127727ffc49478ab6685dd16fadc301');
+    const responseIndia = await fetch('/api/anirudh/TopHeadline');
     const dataIndia = await responseIndia.json();
     
     for (const crr of dataIndia.articles) {
@@ -30,8 +29,7 @@ document.querySelector('.navbar').style.display = 'none';
       `;
     }
 
-    // Fetch top business headlines for the US
-    const responseBusinessUS = await fetch('https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=8127727ffc49478ab6685dd16fadc301');
+    const responseBusinessUS = await fetch('/api/anirudh/fetchTopBusinessOne');
     const dataBusinessUS = await responseBusinessUS.json();
 
     for (const bdx of dataBusinessUS.articles) {
@@ -52,8 +50,7 @@ document.querySelector('.navbar').style.display = 'none';
       `;
     }
 
-    // Fetch top business headlines for India
-    const responseBusinessIndia = await fetch('https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=8127727ffc49478ab6685dd16fadc301');
+    const responseBusinessIndia = await fetch('/api/anirudh/fetchTopBusinessTwo');
     const dataBusinessIndia = await responseBusinessIndia.json();
 
     for (const INDDx of dataBusinessIndia.articles) {
@@ -74,8 +71,7 @@ document.querySelector('.navbar').style.display = 'none';
       `;
     }
 
-    // Fetch top sports headlines for India
-    const responseSportsIndia = await fetch('https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=8127727ffc49478ab6685dd16fadc301');
+    const responseSportsIndia = await fetch('/api/anirudh/fetchTopSports');
     const dataSportsIndia = await responseSportsIndia.json();
 
     for (const sdxx of dataSportsIndia.articles) {
@@ -96,7 +92,6 @@ document.querySelector('.navbar').style.display = 'none';
       `;
     }
 
-    // Other code related to collapsibles, loading, navigation, etc.
     setTimeout(() => {
       const collapsibles = document.querySelectorAll('.collapsible');
       collapsibles.forEach(collapsible => {
